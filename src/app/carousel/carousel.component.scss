@@ -60,14 +60,9 @@ $arrow-hover-color:rgb(173, 121, 0);
   font-size: 3rem;
   user-select: none;
   height: 100%;
-  opacity: 80%;
+  opacity: 1 !important;
   // opacity effect on hover
-  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
+  // transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
 
   /* Position the buttons */
   &.next {
