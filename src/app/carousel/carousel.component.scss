@@ -1,0 +1,109 @@
+
+// :host{
+//   font-size: 16px;
+// }
+
+// =========================
+// variable
+// =========================
+
+$caption-font:"Montserrat", sans-serif;
+$caption-font-size:1.5rem;
+$caption-font-weight:bold ;
+
+$div-bg-from-color:rgba(0,0,0,1);
+$div-bg-to-color:rgba(0,0,0,0);
+
+$arrow-hover-color:rgb(173, 121, 0);
+
+// =========================
+// Carousel
+// =========================
+.carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // zoom effect on hover
+  transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+
+.div__cauroselWrapper:hover .slide {
+  transform: scale(1.025);
+  filter: blur(8px);
+}
+
+// =========================
+// Next and Prev buttons
+// =========================
+.control {
+  border: none;
+  background-color: transparent;
+  outline: 0; // remove blue outline border, but make sure they are still focussable for accessibility
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  user-select: none;
+  height: 100%;
+  opacity: 80%;
+  // opacity effect on hover
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  /* Position the buttons */
+  &.next {
+    right: 0;
+  }
+  &.prev {
+    left: 0;
+  }
+}
+
+
+
+.div.div__caption{
+  padding-top:10%;
+  font-family: $caption-font;
+  padding-bottom: 2px;
+  position: absolute;
+  top:50%;
+  text-align: center;
+  width:100%;
+  height: 50%;
+  z-index: 1; 
+  font-size:$caption-font-size;
+  font-weight:$caption-font-weight ;
+  background-image: linear-gradient(to top,$div-bg-from-color,$div-bg-to-color); 
+  & a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+}
+
+
+button.prev,button.next{
+  color:$div-bg-from-color;
+  z-index: 2;
+  & :hover{
+    color:$arrow-hover-color;
+  }
+}

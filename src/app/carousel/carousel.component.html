@@ -1,0 +1,24 @@
+<!-- carousel -->
+<div (mouseenter)='onHover()' (mouseleave)="onBlur()" class="div div__cauroselWrapper carousel">
+  <ng-container *ngFor="let slide of slides; let i = index">
+    <div>
+      <img
+      *ngIf="i === currentSlide"
+      [src]="slide.imgSrc"
+      class="slide"
+      [@slideAnimation]="animationType"
+    />
+    <div *ngIf="i === currentSlide" class="div div__caption">
+          <p><a id="a a__captionLink" [href]="slide.captionLink">{{slide.caption}}</a></p>
+    </div>
+    </div> 
+  </ng-container>
+
+  <!-- controls -->
+  <button class="control prev" >
+    <i (click)="onPreviousClick()" class="fas fa-caret-square-left btn btn__prev"></i>
+  </button>
+  <button class="control next" (click)="onNextClick()">
+    <i class="fas fa-caret-square-right"></i>
+  </button>
+</div>
